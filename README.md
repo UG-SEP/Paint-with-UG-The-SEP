@@ -1,14 +1,14 @@
 # Paint-with-UG-The-SEP
 ## Feature in Paint with UG
-1: Free Draw </br>
-2: Fill </br>
-3: Text </br>
-4: Save </br>
-5: Load </br>
-6: Line </br>
-7: Rectangle </br>
-8: Circle </br>
-9: Clear </br>
+**1: Free Draw** </br>
+**2: Fill** </br>
+**3: Text** </br>
+**4: Save** </br>
+**5: Load** </br>
+**6: Line** </br>
+**7: Rectangle** </br>
+**8: Circle** </br>
+**9: Clear**  </br>
  
  ## Colors
  ![color](https://user-images.githubusercontent.com/75884061/104131874-5d96c700-539f-11eb-9a13-57f1da378603.png)

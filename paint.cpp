@@ -1,4 +1,4 @@
-#include<stdio.h>
+ #include<stdio.h>
 #include<graphics.h>
 struct node
 {
@@ -17,7 +17,7 @@ void text(POINT *cursor_pos,struct node **Start);
 void checkshape(POINT *cursor_pos,struct node *Start);
 void fil(POINT *cursor_pos,struct node **Start);
 void set_panel(void);
-
+void triangle(POINT *cursor_pos,struct node **Start);
 main()
 {
 struct node *Start=NULL;
@@ -87,20 +87,22 @@ else if(cursorpos->x>0&&cursorpos->x<100&&cursorpos->y>330&&cursorpos->y<380)
 {
     cleardevice();
     set_panel();
+
 }
 else if(cursorpos->x>0&&cursorpos->x<100&&cursorpos->y>370&&cursorpos->y<420){
 cleardevice();
 set_panel();
     readimagefile("paint with ug.jpeg",80,80,600,500);
-
 }
+else if(cursorpos->x>0&&cursorpos->x<100&&cursorpos->y>410&&cursorpos->y<460)
+    triangle(cursorpos,Start);
 }
 void pencil(POINT *cursor_pos,struct node **Start)
 {
     int x1,y1;
 while(1)
 {
-            if(GetAsyncKeyState(VK_TAB))
+       if(GetAsyncKeyState(VK_TAB))
  identify_shape(cursor_pos,Start);
      else if(GetAsyncKeyState(VK_SHIFT))
             check_color(cursor_pos);
@@ -162,7 +164,7 @@ void make_circle(POINT *cursor_pos,struct node **Start)
         circle(x1+(x2-x1)/2,y1+(y2-y1)/2,((x2-x1)/2));
         j++;
     }
-    else if(GetAsyncKeyState(VK_RBUTTON)&&i==1)
+    else if(!GetAsyncKeyState(VK_LBUTTON)&&i==1)
     { setcolor(getbkcolor());
         circle(x1+(x2-x1)/2,y1+(y2-y1)/2,((x2-x1)/2));
         setcolor(color);
@@ -207,7 +209,7 @@ void make_rectangle(POINT *cursor_pos,struct node **Start)
         rectangle(x1,y1,x2,y2);
     y++;
     }
-    else if(GetAsyncKeyState(VK_RBUTTON)&&i==1)
+    else if(!GetAsyncKeyState(VK_LBUTTON)&&i==1)
     {
         setcolor(getbkcolor());
         rectangle(x1,y1,x2,y2);
@@ -245,7 +247,7 @@ void make_line(POINT *cursor_pos,struct node **Start)
         y1=cursor_pos->y;
         i++;
     }
-    else if(GetAsyncKeyState(VK_RBUTTON)&&i==1)
+    else if(!GetAsyncKeyState(VK_LBUTTON)&&i==1)
     {
         setcolor(getbkcolor());
      line(x1-5,y1-20,x2-5,y2-20);
@@ -342,6 +344,7 @@ void fil(POINT *cursor_pos,struct node **Start)
 }
 void set_panel(void)
 { int i=0,x=0;
+setcolor(WHITE);
     rectangle(0,50,100,80);
     settextstyle(3,0,3);
     outtextxy(10,53,"Pencil");
@@ -361,6 +364,8 @@ void set_panel(void)
       outtextxy(10,333,"Clear");
 rectangle(0,370,100,400);
       outtextxy(10,373,"Load");
+      rectangle(0,410,100,440);
+      outtextxy(10,413,"Triangle");
 while(i<16)
 {
     setfillstyle(SOLID_FILL,i);
@@ -369,4 +374,66 @@ while(i<16)
     x=x+40;
     i++;
 }
+}
+void triangle(POINT *cursor_pos,struct node **Start)
+{    int color;
+     int i=0,y=0,x1,x2,y1,y2;
+     while(1)
+     {
+         GetCursorPos(cursor_pos);
+         if(GetAsyncKeyState(VK_TAB))
+            identify_shape(cursor_pos,Start);
+        else if(GetAsyncKeyState(VK_SHIFT))
+            check_color(cursor_pos);
+
+         else if(GetAsyncKeyState(VK_LBUTTON)&&i==0)
+    {
+        x1=cursor_pos->x;
+        y1=cursor_pos->y;
+        i++;
+    }
+    else if(GetAsyncKeyState(VK_LBUTTON))
+    {  if(y>0){
+        color=getcolor();
+        setcolor(getbkcolor());
+        line(x1,y1,x1-(x2-x1),y2);
+        line(x1,y1,x1+(x2-x1),y2);
+        line(x1-(x2-x1),y2,x2,y2);
+        setcolor(color);
+    }
+    GetCursorPos(cursor_pos);
+        x2=cursor_pos->x;
+        y2=cursor_pos->y;
+ line(x1,y1,x1-(x2-x1),y2);
+        line(x1,y1,x1+(x2-x1),y2);
+        line(x1-(x2-x1),y2,x2,y2);
+    y++;
+    }
+    else if(!GetAsyncKeyState(VK_LBUTTON)&&i==1)
+    {
+        setcolor(getbkcolor());
+        line(x1,y1,x1-(x2-x1),y2);
+        line(x1,y1,x1+(x2-x1),y2);
+        line(x1-(x2-x1),y2,x2,y2);
+
+        setcolor(color);
+        GetCursorPos(cursor_pos);
+        x2=cursor_pos->x;
+        y2=cursor_pos->y;
+        i++;
+    }
+    if(i==2){
+
+ line(x1,y1,x1-(x2-x1),y2);
+        line(x1,y1,x1+(x2-x1),y2);
+        line(x1-(x2-x1),y2,x2,y2);
+
+
+    put(Start,x1,y1,x2,y2,getcolor());
+    i=0;
+    y=0;}
+    delay(50);
+
+    }
+
 }

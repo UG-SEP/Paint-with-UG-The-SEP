@@ -31,37 +31,37 @@ pencil(&cursor_pos,&Start);
 void check_color(POINT *cursor_pos)
 {
     GetCursorPos(cursor_pos);
-    if(cursor_pos->x>=0&&cursor_pos->x<=30&&cursor_pos->y>=10&&cursor_pos->y<=65)
+    if(cursor_pos->x-5>=0&&cursor_pos->x-5<=30&&cursor_pos->y-35>=10&&cursor_pos->y-35<=65)
         setcolor(0);
-    else if(cursor_pos->x>=40&&cursor_pos->x<=70&&cursor_pos->y>=10&&cursor_pos->y<=65)
+    else if(cursor_pos->x-5>=40&&cursor_pos->x-5<=70&&cursor_pos->y-35>=10&&cursor_pos->y-35<=65)
         setcolor(1);
-     else if(cursor_pos->x>=80&&cursor_pos->x<=110&&cursor_pos->y>=10&&cursor_pos->y<=65)
+     else if(cursor_pos->x-5>=80&&cursor_pos->x-5<=110&&cursor_pos->y-35>=10&&cursor_pos->y-35<=65)
         setcolor(2);
-      else if(cursor_pos->x>=120&&cursor_pos->x<=150&&cursor_pos->y>=10&&cursor_pos->y<=65)
+      else if(cursor_pos->x-5>=120&&cursor_pos->x-5<=150&&cursor_pos->y-35>=10&&cursor_pos->y-35<=65)
         setcolor(3);
-       else if(cursor_pos->x>=160&&cursor_pos->x<=190&&cursor_pos->y>=10&&cursor_pos->y<=65)
+       else if(cursor_pos->x-5>=160&&cursor_pos->x-5<=190&&cursor_pos->y-35>=10&&cursor_pos->y-35<=65)
         setcolor(4);
-         else if(cursor_pos->x>=200&&cursor_pos->x<=230&&cursor_pos->y>=10&&cursor_pos->y<=65)
+         else if(cursor_pos->x-5>=200&&cursor_pos->x-5<=230&&cursor_pos->y-35>=10&&cursor_pos->y-35<=65)
 setcolor(5);
- else if(cursor_pos->x>=240&&cursor_pos->x<=270&&cursor_pos->y>=10&&cursor_pos->y<=65)
+ else if(cursor_pos->x-5>=240&&cursor_pos->x-5<=270&&cursor_pos->y-35>=10&&cursor_pos->y-35<=65)
     setcolor(6);
-  else if(cursor_pos->x>=280&&cursor_pos->x<=310&&cursor_pos->y>=10&&cursor_pos->y<=65)
+  else if(cursor_pos->x-5>=280&&cursor_pos->x-5<=310&&cursor_pos->y-35>=10&&cursor_pos->y-35<=65)
     setcolor(7);
-   else if(cursor_pos->x>=320&&cursor_pos->x<=350&&cursor_pos->y>=10&&cursor_pos->y<=65)
+   else if(cursor_pos->x-5>=320&&cursor_pos->x-5<=350&&cursor_pos->y-35>=10&&cursor_pos->y-35<=65)
 setcolor(8);
- else if(cursor_pos->x>=360&&cursor_pos->x<=390&&cursor_pos->y>=10&&cursor_pos->y<=65)
+ else if(cursor_pos->x-5>=360&&cursor_pos->x-5<=390&&cursor_pos->y-35>=10&&cursor_pos->y-35<=65)
 setcolor(9);
- else if(cursor_pos->x>=400&&cursor_pos->x<=430&&cursor_pos->y>=10&&cursor_pos->y<=65)
+ else if(cursor_pos->x-5>=400&&cursor_pos->x-5<=430&&cursor_pos->y-35>=10&&cursor_pos->y-35<=65)
 setcolor(10);
- else if(cursor_pos->x>=440&&cursor_pos->x<=470&&cursor_pos->y>=10&&cursor_pos->y<=65)
+ else if(cursor_pos->x-5>=440&&cursor_pos->x-5<=470&&cursor_pos->y-35>=10&&cursor_pos->y-35<=65)
     setcolor(11);
-  else if(cursor_pos->x>=480&&cursor_pos->x<=510&&cursor_pos->y>=10&&cursor_pos->y<=65)
+  else if(cursor_pos->x-5>=480&&cursor_pos->x-5<=510&&cursor_pos->y-35>=10&&cursor_pos->y-35<=65)
 setcolor(12);
- else if(cursor_pos->x>=520&&cursor_pos->x<=550&&cursor_pos->y>=10&&cursor_pos->y<=65)
+ else if(cursor_pos->x-5>=520&&cursor_pos->x-5<=550&&cursor_pos->y-35>=10&&cursor_pos->y-35<=65)
 setcolor(13);
- else if(cursor_pos->x>=560&&cursor_pos->x<=590&&cursor_pos->y>=10&&cursor_pos->y<=65)
+ else if(cursor_pos->x-5>=560&&cursor_pos->x-5<=590&&cursor_pos->y-35>=10&&cursor_pos->y-35<=65)
 setcolor(14);
- else if(cursor_pos->x>=600&&cursor_pos->x<=630&&cursor_pos->y>=10&&cursor_pos->y<=65)
+ else if(cursor_pos->x-5>=600&&cursor_pos->x-5<=630&&cursor_pos->y-35>=10&&cursor_pos->y-35<=65)
 setcolor(15);
 }
 void identify_shape(POINT *cursorpos,struct node **Start)
@@ -69,32 +69,35 @@ void identify_shape(POINT *cursorpos,struct node **Start)
 
     GetCursorPos(cursorpos);
     delay(10);
-if(cursorpos->x>0&&cursorpos->x<100&&cursorpos->y>50&&cursorpos->y<100)
+if(cursorpos->x-5>=0&&cursorpos->x-5<=40&&cursorpos->y-35>=45&&cursorpos->y-35<=80){
         pencil(cursorpos,Start);
-else if(cursorpos->x>0&&cursorpos->x<100&&cursorpos->y>90&&cursorpos->y<140)
-    fil(cursorpos,Start);
-    else if(cursorpos->x>0&&cursorpos->x<100&&cursorpos->y>130&&cursorpos->y<180)
+}
+else if(cursorpos->x-5>=0&&cursorpos->x-5<=40&&cursorpos->y-35>=85&&cursorpos->y-35<=120)
+{
+fil(cursorpos,Start);
+}
+    else if(cursorpos->x-5>=0&&cursorpos->x-5<=40&&cursorpos->y-35>=125&&cursorpos->y-35<=160)
         text(cursorpos,Start);
-    else if(cursorpos->x>0&&cursorpos->x<100&&cursorpos->y>170&&cursorpos->y<220)
+    else if(cursorpos->x-5>=0&&cursorpos->x-5<=40&&cursorpos->y-35>=165&&cursorpos->y-35<=200)
     writeimagefile("paint with ug.jpeg");
- else if(cursorpos->x>0&&cursorpos->x<100&&cursorpos->y>210&&cursorpos->y<260)
+ else if(cursorpos->x-5>=0&&cursorpos->x-5<=40&&cursorpos->y-35>=205&&cursorpos->y-35<=240)
  make_line(cursorpos,Start);
-else if(cursorpos->x>0&&cursorpos->x<100&&cursorpos->y>250&&cursorpos->y<300)
+else if(cursorpos->x-5>=0&&cursorpos->x-5<=40&&cursorpos->y-35>=245&&cursorpos->y-35<=280)
 make_rectangle(cursorpos,Start);
-else if(cursorpos->x>0&&cursorpos->x<100&&cursorpos->y>290&&cursorpos->y<340)
+else if(cursorpos->x-5>=0&&cursorpos->x-5<=40&&cursorpos->y-35>=285&&cursorpos->y-35<=320)
 make_circle(cursorpos,Start);
-else if(cursorpos->x>0&&cursorpos->x<100&&cursorpos->y>330&&cursorpos->y<380)
+else if(cursorpos->x-5>=0&&cursorpos->x-5<=40&&cursorpos->y-35>=325&&cursorpos->y-35<=360)
 {
     cleardevice();
     set_panel();
 
 }
-else if(cursorpos->x>0&&cursorpos->x<100&&cursorpos->y>370&&cursorpos->y<420){
+else if(cursorpos->x-5>=0&&cursorpos->x-5<=40&&cursorpos->y-35>=365&&cursorpos->y-35<=400){
 cleardevice();
 set_panel();
     readimagefile("paint with ug.jpeg",80,80,600,500);
 }
-else if(cursorpos->x>0&&cursorpos->x<100&&cursorpos->y>410&&cursorpos->y<460)
+else if(cursorpos->x-5>=0&&cursorpos->x-5<=40&&cursorpos->y-35>=405&&cursorpos->y-35<=440)
     triangle(cursorpos,Start);
 }
 void pencil(POINT *cursor_pos,struct node **Start)
@@ -111,7 +114,7 @@ while(1)
         GetCursorPos(cursor_pos);
         x1=cursor_pos->x;
         y1=cursor_pos->y;
-        putpixel(x1-5,y1-20,getcolor());
+        putpixel(x1-5,y1-15,getcolor());
     }
 }
 }
@@ -277,14 +280,15 @@ void make_line(POINT *cursor_pos,struct node **Start)
     }
 }
 void text(POINT *cursor_pos,struct node **Start)
-{ char text[20],ch;
+{ char text[60],ch;
 int i=0,x,y,color;
+     settextstyle(BOLD_FONT,HORIZ_DIR,2);
    if(GetAsyncKeyState(VK_TAB))
             identify_shape(cursor_pos,Start);
  else if(GetAsyncKeyState(VK_SHIFT))
             check_color(cursor_pos);
 
-     outtextxy(550,240,"Enter text");
+     outtextxy(580,240,"Text");
     while(1)
     {
         ch=getch();
@@ -302,7 +306,7 @@ int i=0,x,y,color;
  while(1){
         if(GetAsyncKeyState(VK_LBUTTON)){
 GetCursorPos(cursor_pos);
-    outtextxy(cursor_pos->x,cursor_pos->y,text);
+    outtextxy(cursor_pos->x-5,cursor_pos->y-35,text);
     color=getcolor();
      setcolor(getbkcolor());
      outtextxy(550,240,"Enter text");
@@ -345,27 +349,64 @@ void fil(POINT *cursor_pos,struct node **Start)
 void set_panel(void)
 { int i=0,x=0;
 setcolor(WHITE);
-    rectangle(0,50,100,80);
-    settextstyle(3,0,3);
-    outtextxy(10,53,"Pencil");
-     rectangle(0,90,100,120);
-      outtextxy(10,93,"Fill");
-       rectangle(0,130,100,160);
-      outtextxy(10,133,"Text");
-       rectangle(0,170,100,200);
-      outtextxy(10,173,"Save");
-       rectangle(0,210,100,240);
-      outtextxy(10,213,"Line");
-       rectangle(0,250,100,280);
-      outtextxy(10,253,"Rectangle");
-       rectangle(0,290,100,320);
-      outtextxy(10,293,"Circle");
- rectangle(0,330,100,360);
-      outtextxy(10,333,"Clear");
-rectangle(0,370,100,400);
-      outtextxy(10,373,"Load");
-      rectangle(0,410,100,440);
-      outtextxy(10,413,"Triangle");
+//pencil
+rectangle(0,45,40,80);
+line(30,50,30,65);
+line(15,50,15,65);
+line(30,65,25,70);
+line(15,65,25,70);
+line(27,65,15,65);
+line(30,50,15,50);
+//fill
+       rectangle(0,85,40,120);
+       setfillstyle(SOLID_FILL,YELLOW);
+ellipse(20,100,0,360,8,4);
+ellipse(20,100,0,180,8,8);
+floodfill(20,100,WHITE);
+
+line(12,100,12,115);
+line(28,100,28,115);
+line(12,115,28,115);
+//Text
+rectangle(0,125,40,160);
+settextstyle(BOLD_FONT,HORIZ_DIR,4);
+outtextxy(8,126,"A");
+settextstyle(DEFAULT_FONT,HORIZ_DIR,1);
+//Save
+rectangle(0,165,40,200);
+rectangle(10,170,30,195);
+line(10,170,15,178);
+line(30,170,25,178);
+line(15,178,25,178);
+line(15,184,25,184);
+line(15,188,25,188);
+line(15,192,25,192);
+//Line
+rectangle(0,205,40,240);
+line(10,210,25,230);
+//rectangle
+rectangle(0,245,40,280);
+rectangle(5,255,35,270);
+//circle
+rectangle(0,285,40,320);
+circle(20,302,15);
+//Clear
+setfillstyle(SOLID_FILL,WHITE);
+rectangle(0,325,40,360);
+floodfill(20,340,WHITE);
+//Load
+rectangle(0,365,40,400);
+rectangle(5,370,25,395);
+setlinestyle(0,0,3);
+line(20,380,38,380);
+line(20,380,28,375);
+line(20,380,28,385);
+setlinestyle(0,0,1);
+//Triangle
+rectangle(0,405,40,440);
+        line(20,410,28,430);
+        line(20,410,12,430);
+        line(12,430,28,430);
 while(i<16)
 {
     setfillstyle(SOLID_FILL,i);

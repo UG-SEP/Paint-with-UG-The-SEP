@@ -48,7 +48,7 @@
  <img src="https://github.com/UG-SEP/Project-Guidance/blob/main/Desktop%20Application/Advanced/C%2B%2B/Paint%20With%20UG/screenshot/Screenshot%202021-02-09%20223744.jpg" alt="Image">
 <h1> Love By Starting Some of my repos💖💖💖</h1><br>
 <h2> 🤝 Connect with me:-</h2>
- [youtube]: https://www.youtube.com/channel/UChdmj1kcZiXXsmEKz7dVnWQ </br>
-[linkedin]: https://www.linkedin.com/in/ujjwal-gupta-ug-233543202/ </br>
+<a href="https://www.youtube.com/channel/UChdmj1kcZiXXsmEKz7dVnWQ">Watch Video on Youtube</a> <br>
+<a href="https://www.linkedin.com/in/ujjwal-gupta-ug-233543202/">Connect With Me 🤝</a>
 
 

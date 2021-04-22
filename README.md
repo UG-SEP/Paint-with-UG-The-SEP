@@ -4,7 +4,7 @@
 ![](https://img.shields.io/badge/Platform-Desktop_Development-green.svg)
 ![](https://img.shields.io/badge/Status-Beta-green.svg)
 ![](https://img.shields.io/badge/Version-CodeBlocks_20.03-red.svg)
-![](https://img.shields.io/badge/Version-updated-blue.svg)
+![](https://img.shields.io/badge/Version-2.01.00-blue.svg)
 <h1><p align="center">Paint-with-UG-The-SEP</p>
 <p align="center">😲Updated Version😲</p> </h1>
 <h2> Feature in Paint with UG</h2><br>

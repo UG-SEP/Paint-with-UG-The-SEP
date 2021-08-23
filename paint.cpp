@@ -1,4 +1,4 @@
-// Copyright 2021 Ujjwal Gupta (@UG-SEP)
+// Copyright (c) 2021 Ujjwal Gupta (@UG-SEP)
 #include<stdio.h>
 #include<graphics.h>
 int bk=0;
